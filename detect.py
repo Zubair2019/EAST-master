@@ -181,12 +181,12 @@ def detect_dataset(model, device, test_img_path, submit_path):
 
 
 if __name__ == '__main__':
-	img_path    = './8.jpg'
+	img_path    = './input/7.jpg'
 	model_path  = './pths/east_vgg16.pth'
 	res_img     = './res.bmp'
 	device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 	model = EAST().to(device)
-	model.load_state_dict(torch.load(model_path),map_location='cpu')
+	model.load_state_dict(torch.load(model_path,map_location='cpu'))
 	model.eval()
 	img = Image.open(img_path)
 	
